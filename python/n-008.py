@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 def cipher(s):
     def _cipher(c):
         o = ord(c)

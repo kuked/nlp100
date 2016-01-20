@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import re
 
-s = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can."
+s = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might \
+        Also Sign Peace Security Clause. Arthur King Can."
 ws = [w for w in re.split(r'\W+', s) if len(w) > 0]
 
 elements = {}

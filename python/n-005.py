@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def ngram(n):
     def _n_gram(seq):
         return [seq[i:i+n] for i in range(0, len(seq))]
