@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import pickle
 import requests
 import MeCab
 
@@ -38,4 +39,6 @@ with open('neko.txt.mecab') as fp:
                 'pos1':    tagged[1],
                 })
 
+if not os.path.exists('sentences.p'):
+    pickle.dump(sentences, open('sentences.p', 'wb'))
 print(sentences)
