@@ -1,9 +1,9 @@
 import unittest
-import n000
+from n100.n000 import reverse
 
 class ReverseTest(unittest.TestCase):
     def test_reverse(self):
-        self.assertEqual("desserts", n000.reverse("stressed"))
+        self.assertEqual("desserts", reverse("stressed"))
 
 if __name__ == "__main__":
     unittest.main()
