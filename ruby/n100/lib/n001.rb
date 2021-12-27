@@ -1,5 +1,5 @@
 class String
-  def pickup(indices)
+  def at(indices)
     indices.map { |i| self[i] }.join
   end
 end
