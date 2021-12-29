@@ -1,3 +1,3 @@
 100 lessons of nlp
 
-[http://www.cl.ecei.tohoku.ac.jp/nlp100/](http://www.cl.ecei.tohoku.ac.jp/nlp100/)
+[https://nlp100.github.io/en/](NLP 100 Exercise)
