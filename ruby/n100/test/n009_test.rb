@@ -17,8 +17,8 @@ class N009Test < Minitest::Test
       end
     end
 
-    pp ws.join(' ')
-
+    # The output is random and cannot be compared.
+    # p ws.join(' ')
     pass
   end
 end
