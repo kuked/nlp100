@@ -9,7 +9,7 @@ class N009Test < Minitest::Test
 
   def test_typoglycemia
     words = @sentence.split(/ +/)
-    ws = words.map do |w|
+    _ = words.map do |w|
       if w.length > 4
         "#{w[0]}#{w[1..-2].shuffle}#{w[-1]}"
       else
@@ -18,7 +18,7 @@ class N009Test < Minitest::Test
     end
 
     # The output is random and cannot be compared.
-    # p ws.join(' ')
+    # p _.join(' ')
     pass
   end
 end

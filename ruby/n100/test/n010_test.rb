@@ -7,7 +7,7 @@ class N010Test < Minitest::Test
   end
 
   def test_wcl
-    expect, err = capture_subprocess_io do
+    expect, _ = capture_subprocess_io do
       system "wc -l #{@path} | awk '{print $1}'"
     end
 
