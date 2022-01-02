@@ -14,7 +14,7 @@ class N018Test < Minitest::Test
     items = orders.zip(lines)
 
     # sort in descending order
-    items.sort_by! {|v| v[0].to_i }.map(&:last)
+    items.sort_by {|v| v[0].to_i * -1 }.map(&:last)
 
     pass
   end
