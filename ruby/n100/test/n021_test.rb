@@ -7,7 +7,7 @@ class N021Test < Minitest::Test
     @path = 'lib/jawiki-country.json.gz'
   end
 
-  def test_fetch
+  def test_regexp_literal
     wiki = Wiki.new(@path)
     text = wiki.fetch('イギリス').text
 
