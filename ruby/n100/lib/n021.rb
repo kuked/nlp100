@@ -1,0 +1,1 @@
+CATEGORY = /\[\[Category:(?<category>.+?)\]\]/
