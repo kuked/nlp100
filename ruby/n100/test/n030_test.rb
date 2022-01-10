@@ -9,7 +9,6 @@ class N030Test < Minitest::Test
   def test_sentence
     tagged = Tagged.new(@path)
     actual = tagged.sentence
-    p actual
     refute_nil actual
   end
 end
