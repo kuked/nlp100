@@ -3,3 +3,4 @@ __pycache__/
 **/popular-names.txt
 **/jawiki-country.json.gz
 **/neko.txt
+**/neko.txt.mecab
