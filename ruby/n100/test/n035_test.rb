@@ -11,7 +11,7 @@ class N035Test < Minitest::Test
   def test_surfaces
     surfaces = @tagged.surfaces.flatten
     hash = surfaces.tally
-    actual = hash.sort_by {|_, v| -v }[0..9]
+    actual = hash.sort_by {|_, v| -v }
     refute_nil actual
   end
 end
