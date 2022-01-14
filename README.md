@@ -6,7 +6,7 @@
 ### Setup for Chapter 4
 
 ```
-# install necessaries
+# install mecab
 brew install mecab
 brew install mecab-ipadic
 gem install mecab -- --with-cppflags=I/opt/homebrew/include
