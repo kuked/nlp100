@@ -10,4 +10,8 @@
 brew install mecab
 brew install mecab-ipadic
 gem install mecab -- --with-cppflags=I/opt/homebrew/include
+
+# install gr
+brew install libgr
+gem install ruby-gr
 ```
