@@ -8,9 +8,8 @@ class N037Test < Minitest::Test
     @tagged = Tagged.new(path)
   end
 
-  def test_cooccurrence_top_10_words
-    actual = @tagged.cooccurrence_top_10_words
-    p actual
+  def test_collocate
+    actual = @tagged.collocate('猫', 2).flatten
     refute_nil actual
   end
 end
