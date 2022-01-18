@@ -4,7 +4,7 @@ class Chunk
   attr_reader :morphs, :dst, :srcs
 
   def initialize(dependency, morphs)
-    dependency.match(/\* (?<srcs>\d+) (?<dst>\d+)D .+/) do |m|
+    dependency.match(/\* (?<srcs>\d+) (?<dst>-?\d+)D .+/) do |m|
       @dst  = m[:dst].to_i
       @srcs = m[:srcs].to_i
     end
@@ -14,28 +14,38 @@ end
 
 
 def read_cabocha(path)
-  chunks = []
+  sentences = []
+
   open(path) do |f|
-    dependency = ""
+    chunks = []
+    dependency = ''
     morphs = []
+
     until f.eof?
       line = f.readline
       if line =~ /^EOS/
         chunks << Chunk.new(dependency, morphs) unless morphs.empty?
+        sentences << chunks unless chunks.empty?
         morphs = []
+        chunks = []
       elsif line =~ /^\*/
+        unless morphs.empty?
+          chunks << Chunk.new(dependency, morphs)
+          morphs = []
+        end
         dependency = line.chomp
       else
         morphs << line.chomp
       end
     end
   end
-  chunks
+
+  sentences
 end
 
 if __FILE__ == $0
   path = 'ai.ja.txt.parsed'
 
-  chunks = read_cabocha(path)
-  pp chunks[1]
+  sentences = read_cabocha(path)
+  pp sentences[1]
 end
