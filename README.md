@@ -15,3 +15,11 @@ gem install mecab -- --with-cppflags=I/opt/homebrew/include
 brew install libgr
 gem install ruby-gr
 ```
+
+
+### Setup for Chapter 5
+
+```
+# install cabocha
+brew install cabocha
+```
