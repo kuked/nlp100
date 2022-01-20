@@ -12,7 +12,7 @@ class N042Test < Minitest::Test
     chunk = Chunk.new(dependency, morphs)
     actual = chunk.text_of_phrase
 
-    assert '次郎に', actual
+    assert_equal '次郎に', actual
   end
 
   def test_text_of_phrase_with_block
@@ -26,6 +26,6 @@ class N042Test < Minitest::Test
     chunk = Chunk.new(dependency, morphs)
     actual = chunk.text_of_phrase {|m| m.pos != '記号' }
 
-    assert '次郎に', actual
+    assert_equal '次郎に', actual
   end
 end
