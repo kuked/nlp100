@@ -9,7 +9,6 @@
 # install mecab
 brew install mecab
 brew install mecab-ipadic
-gem install mecab -- --with-cppflags=I/opt/homebrew/include
 
 # install gr
 brew install libgr
@@ -22,4 +21,8 @@ gem install ruby-gr
 ```
 # install cabocha
 brew install cabocha
+
+# install graphviz
+brew install graphviz
+gem install ruby-graphviz
 ```
