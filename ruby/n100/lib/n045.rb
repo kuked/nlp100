@@ -6,7 +6,7 @@ class Chunk
   end
 
   def find_all_pos(pos)
-    @morphs.find_all { |m| m.pos == pos }
+    @morphs.find_all {|m| m.pos == pos }
   end
 end
 
@@ -21,10 +21,10 @@ if __FILE__ == $0
     verbs.each do |verb|
       relations = chunks.select {|c| verb.srcs == c.dst }
 
-      if relations.any? { |c| c.include?('助詞') }
+      if relations.any? {|c| c.include?('助詞') }
         predicate = verb.find_pos('動詞').base
         cs = relations.map {|c| c.find_all_pos('助詞') }.flatten
-        cs = cs.map { |c| c.base }.uniq.sort
+        cs = cs.map {|c| c.base }.uniq.sort
 
         puts "#{predicate}\t#{cs.join(' ') }"
       end
