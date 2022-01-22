@@ -11,7 +11,7 @@ class Morph
     @surface, others = text.split("\t")
     morphs = others.split(",")
 
-    @base = morphs[-1]
+    @base = morphs[-3]
     @pos = morphs[0]
     @pos1 = morphs[1]
   end

@@ -18,6 +18,6 @@ class N041Test < Minitest::Test
     assert_equal 4, actual.srcs
     assert_equal '次', actual.morphs[0].surface
     assert_equal '名詞', actual.morphs[1].pos
-    assert_equal 'ニ', actual.morphs[2].base
+    assert_equal 'に', actual.morphs[2].base
   end
 end

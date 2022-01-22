@@ -11,7 +11,7 @@ class N040Test < Minitest::Test
     actual = Morph.new(text)
 
     assert_equal '人工', actual.surface
-    assert_equal 'ジンコー', actual.base
+    assert_equal '人工', actual.base
     assert_equal '名詞', actual.pos
     assert_equal '一般', actual.pos1
   end
