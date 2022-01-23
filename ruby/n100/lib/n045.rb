@@ -31,3 +31,9 @@ if __FILE__ == $0
     end
   end
 end
+
+# how to check with UNIX commands.
+# ruby n045.rb | sort | uniq -c | sort -r | head
+# ruby n045.rb | grep -e '^なる' | sort | uniq -c | sort -r | head
+# ruby n045.rb | grep -e '^行う' | sort | uniq -c | sort -r | head
+# ruby n045.rb | grep -e '^与える' | sort | uniq -c | sort -r | head
