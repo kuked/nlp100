@@ -1,8 +1,12 @@
 require_relative 'n042'
 
 class Chunk
-  def include?(pos)
-    @morphs.any? {|m| m.pos == pos }
+  def include?(props)
+    @morphs.map do |m|
+      result = props.map {|k, v| m.send(k.to_sym) == v }
+      return true if result.all?
+    end
+    false
   end
 end
 
@@ -16,7 +20,7 @@ if __FILE__ == $0
     chunks.each do |c|
       dst = c.dst
       if dst != -1
-        if c.include?('名詞') && chunks[dst].include?('動詞')
+        if c.include?({:pos => '名詞'}) && chunks[dst].include?({:pos => '動詞'})
           src_text_of_phrase = c.text_of_phrase(&proc)
           dst_text_of_phrase = chunks[dst].text_of_phrase(&proc)
           puts "#{src_text_of_phrase}\t#{dst_text_of_phrase}"

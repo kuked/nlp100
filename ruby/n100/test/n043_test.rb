@@ -11,10 +11,10 @@ class N043Test < Minitest::Test
 
     chunk = Chunk.new(dependency, morphs)
 
-    actual = chunk.include?('名詞')
+    actual = chunk.include?({:pos => '名詞'})
     assert_equal true, actual
 
-    actual = chunk.include?('動詞')
+    actual = chunk.include?({:pos => '動詞'})
     assert_equal false, actual
   end
 end

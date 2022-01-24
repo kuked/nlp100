@@ -16,12 +16,12 @@ if __FILE__ == $0
   sentence = read_cabocha(path)
 
   sentence.each do |chunks|
-    verbs = chunks.find_all {|c| c.include?('動詞') }
+    verbs = chunks.find_all {|c| c.include?({:pos => '動詞'}) }
 
     verbs.each do |verb|
       relations = chunks.select {|c| verb.srcs == c.dst }
 
-      if relations.any? {|c| c.include?('助詞') }
+      if relations.any? {|c| c.include?({:pos => '助詞'}) }
         predicate = verb.find_pos('動詞').base
         cs = relations.map {|c| c.find_all_pos('助詞') }.flatten
         cs = cs.map {|c| c.base }.uniq.sort
